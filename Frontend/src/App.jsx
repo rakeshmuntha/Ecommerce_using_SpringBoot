@@ -39,22 +39,24 @@ function App() {
   return (
     <AppProvider>
       <BrowserRouter>
-        <Navbar onSelectCategory={handleCategorySelect}
-         />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home addToCart={addToCart} selectedCategory={selectedCategory}
-              />
-            }
+        <div style={{ zoom: 0.8 }}>
+          <Navbar onSelectCategory={handleCategorySelect}
           />
-          <Route path="/add_product" element={<AddProduct />} />
-          <Route path="/product" element={<Product  />} />
-          <Route path="product/:id" element={<Product  />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/product/update/:id" element={<UpdateProduct />} />
-        </Routes>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home addToCart={addToCart} selectedCategory={selectedCategory}
+                />
+              }
+            />
+            <Route path="/add_product" element={<AddProduct />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="product/:id" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/product/update/:id" element={<UpdateProduct />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </AppProvider>
   );
